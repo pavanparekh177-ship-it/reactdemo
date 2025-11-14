@@ -1,11 +1,15 @@
 import React from 'react'
+import Home from './component/page/home'
+import Header from './component/layout/heder'
 
- function home() {
-  return (
-   <>
-        <home/>
+function App() {
+return (
+    <>
+<Home/>
+<Header/>
 
- </>
- )
+    </>
+);
 }
-export default app;
+
+export default App
