@@ -1,15 +1,14 @@
-import React from 'react'
-import Home from './component/page/home'
-import Header from './component/layout/heder'
+import React from 'react';
+import Header from './components/layout/Header';
+import Home from './components/page/Home';
 
 function App() {
-return (
+  return (
     <>
-<Home/>
-<Header/>
-
+      <Header />
+      <Home />
     </>
-);
+  );
 }
 
-export default App
+export default App;

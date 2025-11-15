@@ -1,4 +1,4 @@
-import React from 'react'
+import Home from './component/page/home'
 
 function Home() {
   return (
@@ -9,4 +9,3 @@ function Home() {
 }
 
 export default Home
-

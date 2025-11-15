@@ -1,5 +1,6 @@
-import React from 'react'
-function header() {
+import React from 'react';
+
+function Header() {
   return (
     <div>
       <h1>hiiii</h1>
