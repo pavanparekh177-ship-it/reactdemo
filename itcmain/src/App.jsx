@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from "./component/layout/header";
 import Home from './component/page/Home';
+import Header from './component/layout/heder';
 
 function App() {
   return (
     <>
-      <Header />
+      <Header/>
       <Home />
     </>
   );
