@@ -1,3 +1,20 @@
 from django.shortcuts import render
+import _json
+import models
+from django.http import jsanresponse
 
-# Create your views here.
+
+
+
+def register(req):
+    if req.method == "POST":
+        data=_json.loads(req.body)
+        nm=data.get('email')
+        models.users.objects.create(
+            name=nm
+        )
+
+
+
+        return jsanresponse({'message':'successfully registered'},status=200)
+        return jsanresponse({'message':'failed'},status=500)
