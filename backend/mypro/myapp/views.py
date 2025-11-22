@@ -1,9 +1,7 @@
 from django.shortcuts import render
 import _json
-import models
 from django.http import jsanresponse
-
-
+from.models import 
 
 
 def register(req):
