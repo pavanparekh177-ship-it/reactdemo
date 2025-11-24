@@ -16,3 +16,17 @@ def register(req):
 
         return jsanresponse({'message':'successfully registered'},status=200)
         return jsanresponse({'message':'failed'},status=500)
+    
+
+    def login (req):
+    if req.method == "POST":
+        data=_json.loads(req.body)
+        nm=data.get('email')
+        models.users.objects.create(
+            name=nm
+        )
+
+
+
+        return jsanresponse({'message':'successfully login'},status=200)
+        return jsanresponse({'message':'failed'},status=201)
