@@ -1,15 +1,26 @@
 import React from 'react';
-
-import Header from './component/layout/heder';
 import Home from './component/page/home';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Header from './component/layout/header';
 
 function App() {
   return (
-    <>
-      <Header/>
-      <Home/>
-    </>
+    <Router>
+      <Layout>
+        <Home/>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
 export default App;
+

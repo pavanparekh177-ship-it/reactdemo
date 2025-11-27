@@ -1,14 +1,14 @@
 from django.shortcuts import render
 import _json
 from django.http import jsanresponse
-from.models import
+from.models import users
 
 
 def register(req):
     if req.method == "POST":
         data=_json.loads(req.body)
         nm=data.get('email')
-        Users.Objects.create(
+        users.Objects.create(
             name=nm
         )
 
@@ -19,13 +19,13 @@ def register(req):
     
 
     def login (req):
-    if req.method == "POST":
-        data=_json.loads(req.body)
+        if req.method == "POST":
+            data=_json.loads(req.body)
         email=data.get('email')
         pwd=data.get('pwd')
         print(email,pwd)
         users.Objects.get(
-            name=eamail,password=pwd
+        name=email,password=pwd
         )
 
 

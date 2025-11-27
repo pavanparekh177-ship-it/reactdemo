@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #4f67ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    border: none;
+    border-bottom: 2px solid #555;
+    outline: none;
+    background: transparent;
+}
+
+.input-group label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.3s;
+    color: #777;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -12px;
+    font-size: 12px;
+    color: #4f67ff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #4f67ff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3248d1;
+}
+
+.signup {
+    text-align: center;
+    margin-top: 15px;
+}
+.header {
+    width: 100%;
+    padding: 15px 40px;
+    background: #4f67ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav a {
+    margin-left: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.nav a:hover {
+    opacity: 0.7;
+}
