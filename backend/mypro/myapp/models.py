@@ -8,3 +8,6 @@ class users(models.Model):
     
     class meta:
         app_lable1='MYPRO'
+
+
+

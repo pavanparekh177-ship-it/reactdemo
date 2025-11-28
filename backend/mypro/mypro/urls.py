@@ -24,5 +24,5 @@ urlpatterns =[
     path('',include('myapp.urls')),
     path('login-1',login),
     path('get-user',Date),
-    
+    path()
 ]
