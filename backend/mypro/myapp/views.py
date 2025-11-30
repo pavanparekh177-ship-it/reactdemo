@@ -1,38 +1,31 @@
-from django.shortcuts import render
-import _json
-from django.http import jsanresponse
-from.models import users
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from .models import Student
+from .serializers import StudentSerializer
 
+api_view(['GET'])
+def getStudents(request):
+    students = Student.objects.all()
+    serializer = StudentSerializer(students, many=True)
+    return Response(serializer.data)
 
-def register(req):
-    if req.method == "POST":
-        data=_json.loads(req.body)
-        nm=data.get('email')
-        users.Objects.create(
-            name=nm
-        )
+@api_view(['POST'])
+def addStudent(request):
+    serializer = StudentSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
 
+@api_view(['PUT'])
+def updateStudent(request, id):
+    student = Student.objects.get(id=id)
+    serializer = StudentSerializer(student, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
 
-
-        return jsanresponse({'message':'successfully registered'},status=200)
-        return jsanresponse({'message':'failed'},status=500)
-    
-
-    def login (req):
-        if req.method == "POST":
-            data=_json.loads(req.body)
-        email=data.get('email')
-        pwd=data.get('pwd')
-        print(email,pwd)
-        users.Objects.get(
-        name=email,password=pwd
-        )
-
-
-
-        return jsanresponse({'message':'successfully login'},status=200)
-        return jsanresponse({'message':'login failed'},status=20)
-    
-    def Data(req):
-        D=users.objects_by().values('id','name','password')[:1]
-        return jsanresponse(list(D),safe=False)
+@api_view(['DELETE'])
+def deleteStudent(request, id):
+    student = Student.objects.get(id=id)
+    student.delete()
+    return Response("Deleted Successfully")
